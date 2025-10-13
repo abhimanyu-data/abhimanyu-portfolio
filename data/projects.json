@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Customer Insights Dashboard",
+    "description": "Developed a dashboard to visualize customer behavior and KPIs using Power BI.",
+    "image": "https://via.placeholder.com/400x200",
+    "link": "https://example.com/project1"
+  },
+  {
+    "title": "Agile Workflow Automation",
+    "description": "Led the automation of agile workflows using Jira and Confluence integrations.",
+    "image": "https://via.placeholder.com/400x200",
+    "link": "https://example.com/project2"
+  },
+  {
+    "title": "Product Roadmap Planning Tool",
+    "description": "Built a tool to help teams plan and visualize product roadmaps collaboratively.",
+    "image": "https://via.placeholder.com/400x200",
+    "link": "https://example.com/project3"
+  },
+  {
+    "title": "User Feedback Analysis",
+    "description": "Implemented NLP techniques to analyze user feedback and prioritize features.",
+    "image": "https://via.placeholder.com/400x200",
+    "link": "https://example.com/project4"
+  }
+]
