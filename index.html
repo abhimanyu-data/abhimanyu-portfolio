@@ -1,69 +1,198 @@
-<!-- Abhimanyu Singh | AI Product & Platform Manager - Online Portfolio -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abhimanyu Singh Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .hero {
+      height: 25vh; /* Changed from 100vh to 25vh */
+      background: linear-gradient(to right, rgba(0, 109, 91, 0.8), rgba(0, 191, 165, 0.8)),
+                  url('assets/backg.avif') no-repeat center center;
+      background-size: cover;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 2s ease-in;
+    }
 
-<section style="background-color:#e6f7f7; padding:50px 20px; text-align:center; font-family:Arial, sans-serif;">
-  <h1 style="color:#00796b;">Abhimanyu Singh</h1>
-  <h2 style="color:#004d40;">AI Product & Platform Manager</h2>
-  <p style="font-size:18px; max-width:700px; margin:auto;">Building Intelligent, Data-Driven Products that Deliver Measurable Impact</p>
-  <a href="mailto:abhimanyu.data@gmail.com" style="display:inline-block; margin-top:20px; padding:12px 25px; background-color:#00796b; color:#fff; text-decoration:none; border-radius:5px;">Contact Me</a>
-</section>
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      animation: slideDown 1.5s ease-out;
+    }
 
-<section style="padding:50px 20px; max-width:1000px; margin:auto;">
-  <h2 style="color:#00796b; text-align:center;">About Me</h2>
-  <p style="font-size:16px; text-align:center; max-width:800px; margin:auto;">
-    I am a Technical Product Manager with 14+ years of experience leading AI/ML-powered SaaS platforms, enterprise products, and consumer-facing digital solutions. I specialize in building scalable, data-driven products that improve customer experience and deliver measurable business outcomes. My expertise spans AI/ML integration, predictive analytics, shared services design, and user-centric product strategy.
-  </p>
-</section>
+    .hero p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      max-width: 600px;
+      animation: fadeIn 2.5s ease-in;
+    }
 
-<section style="background-color:#f0fdf4; padding:50px 20px;">
-  <h2 style="color:#00796b; text-align:center;">Featured Case Studies</h2>
-  
-  <!-- Case Study 1 -->
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; margin-top:40px;">
-    <div style="background-color:#ffffff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin:10px; padding:20px; flex:1 1 300px; max-width:350px;">
-      <h3 style="color:#004d40;">Dentsu.Connect AI SaaS Platform</h3>
-      <p><strong>Role:</strong> Senior Product Manager | 2021–Present</p>
-      <p>Built predictive engagement platform for 120+ clients. Integrated AI/ML features such as recommendation engines and NLP chat automation, increasing engagement by 30%.</p>
-      <div style="background-color:#e0f2f1; height:150px; margin-top:15px; display:flex; justify-content:center; align-items:center; color:#004d40;">Dashboard Mockup</div>
-      <div style="background-color:#e0f2f1; height:100px; margin-top:10px; display:flex; justify-content:center; align-items:center; color:#004d40;">Feature Flow Diagram</div>
+ 
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes popUp {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+
+
+
+
+
+
+
+
+
+    header, section, footer {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    header {
+      border-bottom: 1px solid #eee;
+    }
+    nav {
+      background-color: #f9f9f9;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #008080;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      color: #008080;
+      margin-bottom: 1rem;
+    }
+    .card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background-color: #fafafa;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .card-text {
+      margin-bottom: 1rem;
+    }
+    .btn-outline-teal {
+      border: 1px solid #008080;
+      color: #008080;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline-teal:hover {
+      background-color: #008080;
+      color: white;
+    }
+    footer {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+      border-radius: 12px;
+    }
+  </style>
+
+
+</head>
+<body>
+  <header class="hero" style="max-width: none; margin: 0; padding: 0; border-radius: 0;">
+    <h1>Welcome to My Portfolio</h1>
+    <p>I’m Abhimanyu Singh, a passionate supplier based in London. Explore my skills, case studies, and resume below.</p>
+  </header>
+
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#case-studies">Case Studies</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact-me">Contact</a>
+  </nav>
+
+  <section id="about" style="background-color:#fafafa;">
+    <h2 class="section-title">About</h2>
+    <p>I am a Technical Product Manager with 14+ years of experience leading AI/ML-powered SaaS platforms, 
+      enterprise products, and consumer-facing digital solutions. I specialize in building scalable, 
+      data-driven products that improve customer experience and deliver measurable business outcomes. 
+      My expertise spans AI/ML integration, predictive analytics, shared services design, and user-centric product strategy.</p>
+  </section>
+
+  <section id="skills" style="background-color:#f0f0f0;">
+    <h2 class="section-title">Skills</h2>
+    <p>Product Strategy | Agile | GTM Strategy | Wireframing | Communication | Python | JavaScript | HTML | CSS | SQL | AWS | ReactJS</p>
+  </section>
+
+  <section id="case-studies" style="background-color:#f9f9f9;">
+    <h2 class="section-title">Case Studies / Featured Work</h2>
+    <div class="card">
+      <h5 class="card-title">AI-Powered Personalization Engine</h5>
+      <p class="card-text">Developed a recommendation system using ML algorithms to personalize user experience across SaaS platforms.</p>
+      <a href="https://www.linkedin.com/pulse/ai-powered-personalization-engine-abhimanyu-singh/">View More</a>
     </div>
-    
-    <!-- Case Study 2 -->
-    <div style="background-color:#ffffff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin:10px; padding:20px; flex:1 1 300px; max-width:350px;">
-      <h3 style="color:#004d40;">ACTO App – Intelligent Learning Platform</h3>
-      <p><strong>Role:</strong> Product Owner / Technical Lead | 2019–2020</p>
-      <p>Developed predictive analytics hub to improve onboarding by 40% and automated engagement workflows, reducing manual workload by 35%.</p>
-      <div style="background-color:#e0f2f1; height:150px; margin-top:15px; display:flex; justify-content:center; align-items:center; color:#004d40;">Funnel Improvement Graph</div>
-      <div style="background-color:#e0f2f1; height:100px; margin-top:10px; display:flex; justify-content:center; align-items:center; color:#004d40;">Automation Architecture</div>
+    <div class="card">
+      <h5 class="card-title">Intelligent Reporting Tool</h5>
+      <p class="card-text">Designed and launched a reporting dashboard with predictive analytics for enterprise clients.</p>
+      <a href="https://www.linkedin.com/pulse/ai-powered-personalization-engine-abhimanyu-singh/">View More</a>
     </div>
-    
-    <!-- Case Study 3 -->
-    <div style="background-color:#ffffff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin:10px; padding:20px; flex:1 1 300px; max-width:350px;">
-      <h3 style="color:#004d40;">Ford Digital Transformation</h3>
-      <p><strong>Role:</strong> Senior Consultant / Product Owner | 2016–2019</p>
-      <p>Transitioned legacy software delivery to Agile. Increased release speed by 30% and improved cross-team collaboration.</p>
-      <div style="background-color:#e0f2f1; height:150px; margin-top:15px; display:flex; justify-content:center; align-items:center; color:#004d40;">Agile Roadmap</div>
-      <div style="background-color:#e0f2f1; height:100px; margin-top:10px; display:flex; justify-content:center; align-items:center; color:#004d40;">Delivery Timeline</div>
+    <div class="card">
+      <h5 class="card-title">Automated Customer Engagement Platform</h5>
+      <p class="card-text">Built an NLP-driven chatbot and automation suite to enhance customer interaction and reduce support costs.</p>
+      <a href="https://www.linkedin.com/pulse/ai-powered-personalization-engine-abhimanyu-singh/">View More</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<section style="padding:50px 20px; max-width:1000px; margin:auto;">
-  <h2 style="color:#00796b; text-align:center;">Skills & Certifications</h2>
-  <ul style="list-style:none; text-align:center; padding:0; font-size:16px; margin-top:20px;">
-    <li>AI/ML Integration | Predictive Analytics | GenAI Tools</li>
-    <li>Product Strategy | Roadmaps | Agile / Scrum Leadership</li>
-    <li>Shared Services Design | API Development | Data Dashboards</li>
-    <li>CSPO | CSM | ITIL Expert | Project Management Diploma</li>
-  </ul>
-</section>
+  <section id="resume" style="background-color:#f0f0f0;">
+    <h2 class="section-title">Download Resume</h2>
+    <a href="https://drive.google.com/file/d/your_resume_file">Download here</a>
+  </section>
 
-<section style="background-color:#f0fdf4; padding:50px 20px; text-align:center;">
-  <h2 style="color:#00796b;">Awards & Recognition</h2>
-  <p>Standout Performer – Successive Technologies | Outstanding Growth – ValueLabs | Team of the Year – Cognizant</p>
-</section>
+  <section id="contact-me" style="background-color:#f9f9f9;">
+    <h2 class="section-title">Contact Me</h2>
+    <a href="mailto:abhimanyu.data@gmail.com" style="display:inline-block; margin-top:20px; padding:12px 25px; background-color:#00796b; color:#fff; text-decoration:none; border-radius:5px;">Contact Me</a>
+  </section>
 
-<section style="padding:50px 20px; text-align:center;">
-  <h2 style="color:#00796b;">Contact Me</h2>
-  <p style="font-size:16px;">📧 <a href="mailto:abhimanyu.data@gmail.com">abhimanyu.data@gmail.com</a> | 🔗 <a href="https://linkedin.com/in/abhimanyudata" target="_blank">LinkedIn</a> | 🌐 <a href="https://AbhimanyuSingh.carrd.co" target="_blank">Portfolio</a></p>
-  <a href="mailto:abhimanyu.data@gmail.com" style="display:inline-block; margin-top:20px; padding:12px 25px; background-color:#00796b; color:#fff; text-decoration:none; border-radius:5px;">Get in Touch</a>
-</section>
+  <footer>
+    <p>&copy; 2025 Abhimanyu Singh. All rights reserved.</p>
+  </footer>
+</body>
