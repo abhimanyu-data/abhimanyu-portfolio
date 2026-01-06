@@ -5,68 +5,163 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhimanyu Singh Portfolio</title>
-  <!-- font awesome links-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- ===================== STYLES ===================== -->
   <style>
+    :root {
+      --gold-primary: #FFC107;
+      --gold-dark: #FFB300;
+      --gold-soft: #FFF8E1;
+      --gold-text: #5D4037;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #ffffff;
-      color: #333;
+      color: var(--gold-text);
       margin: 0;
       padding: 0;
       line-height: 1.6;
     }
 
-    .hero {
-      height: 25vh;
-      /* Changed from 100vh to 25vh */
-      background: linear-gradient(to right, rgba(255, 193, 7, 0.8), rgba(255, 235, 59, 0.8)),
+    /* ================= HERO ================= */
+    .hero,
+    .hero4footer {
+      background: linear-gradient(
+          to right,
+          rgba(255, 193, 7, 0.9),
+          rgba(255, 179, 0, 0.85)
+        ),
         url('assets/backg.avif') no-repeat center center;
       background-size: cover;
-      color: white;
+      color: #000;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
+    }
+
+    .hero {
+      height: 25vh;
+      flex-direction: column;
       animation: fadeIn 2s ease-in;
     }
 
     .hero4footer {
       height: 15vh;
-      /* Changed from 100vh to 25vh */
-      background: linear-gradient(to right, rgba(255, 193, 7, 0.8), rgba(255, 235, 59, 0.8)),
-        url('assets/backg.avif') no-repeat center center;
-      background-size: cover;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
+      font-size: 0.9rem;
     }
 
     .hero h1 {
       font-size: 2rem;
-      margin-bottom: 10px;
-      animation: slideDown 1.5s ease-out;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     }
 
-    .hero p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-      max-width: 600px;
-      animation: fadeIn 2.5s ease-in;
+    /* ================= NAV ================= */
+    nav {
+      background-color: var(--gold-soft);
+      border-bottom: 2px solid var(--gold-primary);
+      padding: 1rem;
+      text-align: center;
     }
 
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--gold-dark);
+      font-weight: 600;
+    }
 
+    nav a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    /* ================= SECTIONS ================= */
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--gold-dark);
+      margin-bottom: 1rem;
+    }
+
+    /* ================= CARDS ================= */
+    .card {
+      border: 1px solid #f0e0a0;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background-color: #fffdf4;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* ================= BUTTONS ================= */
+    .btn-yellow {
+      background-color: var(--gold-primary);
+      border-color: var(--gold-primary);
+      color: #000;
+      font-weight: 600;
+    }
+
+    .btn-yellow:hover {
+      background-color: var(--gold-dark);
+      border-color: var(--gold-dark);
+    }
+
+    /* ================= PDF VIEWER ================= */
+    .bodyofpdf {
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #viewerContainer {
+      width: 100%;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+
+    canvas {
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .watermark {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 4rem;
+      color: var(--gold-dark);
+      opacity: 0.08;
+      transform: rotate(-30deg);
+      pointer-events: none;
+    }
+
+    /* ================= ANIMATIONS ================= */
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -76,263 +171,60 @@
         opacity: 1;
       }
     }
-
-    @keyframes slideDown {
-      from {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes popUp {
-      from {
-        transform: scale(0.8);
-        opacity: 0;
-      }
-
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-
-
-
-
-
-
-
-
-
-    header,
-    section,
-    footer {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    header {
-      border-bottom: 1px solid #eee;
-    }
-
-    nav {
-      background-color: #f9f9f9;
-      border-bottom: 1px solid #ddd;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #008080;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .section-title {
-      font-size: 1.5rem;
-      color: #008080;
-      margin-bottom: 1rem;
-    }
-
-    .card {
-      border: 1px solid #eee;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      background-color: #fafafa;
-    }
-
-    .card-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-text {
-      margin-bottom: 1rem;
-    }
-
-    .btn-outline-teal {
-      border: 1px solid #008080;
-      color: #008080;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-outline-teal:hover {
-      background-color: #008080;
-      color: white;
-    }
-
-    footer {
-      background-color: #f0f0f0;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #555;
-      border-radius: 12px;
-    }
-
-
-
-.btn-yellow {
-  background-color: #FFC107;
-  border-color: #FFC107;
-  color: #000;
-}
-
-.btn-yellow:hover {
-  background-color: #FFB300;
-  border-color: #FFB300;
-  color: #000;
-}
-
-
-
-
-
-
-
-
-
-    .bodyofpdf {
-      margin: 0;
-      background: #f5f7f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: system-ui, sans-serif;
-      overflow: hidden;
-    }
-
-    #viewerContainer {
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background: white;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-      border-radius: 10px;
-      position: relative;
-    }
-
-    canvas {
-      display: block;
-      margin: 20px auto;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-    }
-
-    /* Optional watermark */
-    .watermark {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 4rem;
-      color: #007b83;
-      opacity: 0.1;
-      pointer-events: none;
-      user-select: none;
-      transform: rotate(-30deg);
-    }
   </style>
 
-
-
-  <!--  Load PDF.js scripts in the header -->
+  <!-- PDF.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
 
-  <!--  Defer main logic to run after DOM + scripts are ready -->
+  <!-- ================= SCRIPT ================= -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Disable right-click and shortcuts globally
-      document.addEventListener("contextmenu", e => e.preventDefault());
-      document.addEventListener("keydown", e => {
-        if (
-          (e.ctrlKey && ['s', 'S', 'p', 'P', 'u', 'U', 'c', 'C'].includes(e.key)) ||
-          e.key === 'PrintScreen'
-        ) e.preventDefault();
-      });
 
-      // PDF.js setup
+      document.addEventListener("contextmenu", e => e.preventDefault());
+
       pdfjsLib.GlobalWorkerOptions.workerSrc =
         'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
       const viewerContainer = document.getElementById('viewerContainer');
       let currentPdfUrl = '';
 
-      // When any "View PDF" button is clicked
       document.querySelectorAll('.view-pdf-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           currentPdfUrl = btn.getAttribute('data-pdf');
         });
       });
 
-      // When modal is shown, load the appropriate PDF
-      const pdfModal = document.getElementById('pdfModal');
-      pdfModal.addEventListener('shown.bs.modal', () => {
-        if (!currentPdfUrl) return;
-
+      document.getElementById('pdfModal').addEventListener('shown.bs.modal', () => {
         viewerContainer.innerHTML = '<div class="watermark">CONFIDENTIAL</div>';
 
         pdfjsLib.getDocument(currentPdfUrl).promise.then(pdf => {
-          for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-            pdf.getPage(pageNum).then(page => {
-              const scale = 1.3;
-              const viewport = page.getViewport({ scale });
+          for (let i = 1; i <= pdf.numPages; i++) {
+            pdf.getPage(i).then(page => {
+              const viewport = page.getViewport({ scale: 1.3 });
               const canvas = document.createElement('canvas');
-              const context = canvas.getContext('2d');
               canvas.width = viewport.width;
               canvas.height = viewport.height;
               viewerContainer.appendChild(canvas);
-              page.render({ canvasContext: context, viewport });
+              page.render({ canvasContext: canvas.getContext('2d'), viewport });
             });
           }
-        }).catch(err => {
-          console.error('Error loading PDF:', err);
-          viewerContainer.innerHTML = '<p style="color:red;">Failed to load PDF.</p>';
         });
       });
     });
   </script>
-
-
-
-
-
-
-
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="hero" style="max-width: none; margin: 0; padding: 0; border-radius: 0;">
+  <!-- HERO -->
+  <header class="hero">
     <h1>Welcome to My Portfolio</h1>
     <h4>AI. Strategy. Impact.</h4>
     <p>I build intelligent platforms that connect data, design, and business outcomes.</p>
-
   </header>
 
-  <!-- NAVIGATION BAR -->
+  <!-- NAV -->
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -340,152 +232,57 @@
     <a href="#contact-me">Contact</a>
   </nav>
 
-  <!-- ABOUT ME-->
-  <section id="about" style="background-color:#fafafa;">
+  <!-- ABOUT -->
+  <section id="about" style="background:#fffdf4;">
     <h2 class="section-title">About Me</h2>
-    <p>I'm <b>Abhimanyu Singh</b>, a seasoned <b>Product Leader</b> with over <b>15 years of experience</b> building and
-      scaling AI-powered products, enterprise SaaS platforms, and data-driven solutions. I specialize in bridging the
-      gap between strategy and execution—translating complex business needs into impactful, user-centric products.</p>
-    <p>Throughout my career, I’ve led cross-functional Agile teams and spearheaded the development of <b>AI-driven
-        applications</b> including personalization engines, intelligent analytics platforms, and automated customer
-      engagement tools. My background blends deep technical knowledge with strategic vision, enabling me to drive full
-      product lifecycles—from ideation and roadmapping to launch and continuous improvement.</p>
-    <p>I’ve had the opportunity to guide Agile transformations, coach high-performing teams, and deliver measurable
-      outcomes for global organizations like <b>Dentsu, Ford Motor Company, ValueLabs, and Cognizant</b>. Whether
-      scaling development teams or embedding machine learning into core product features, I focus on creating products
-      that solve real-world problems and deliver value at scale.</p>
-    <p>I'm certified as a <b>Scrum Product Owner (CSPO), Scrum Master (CSM), and ITIL Expert</b>, and I bring a
-      data-informed mindset to product discovery, user research, and go-to-market execution.</p>
-    <p>Outside of work, I’m passionate about travel, music, and continuously exploring how technology can shape the
-      future of human experiences.</p>
-    <span style='font-size:50px;'>&#9812;</span>
+    <p><b>Abhimanyu Singh</b> — Product Leader with 15+ years of experience delivering AI-powered platforms, enterprise SaaS, and data-driven products.</p>
+    <span style="font-size:50px;">&#9812;</span>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" style="background-color:#f0f0f0;">
+  <section id="skills" style="background:#fff8e1;">
     <h2 class="section-title">Skills</h2>
-    <h5>Product</h5>
-    <p>Strategic & Business Skills: Product Strategy & Vision | Business & Financial Acumen | Market & Competitive
-      Analysis | Go-to-Market (GTM) Strategy | Portfolio & Lifecycle Management</p>
-    <p>Customer & Design Orientation: Customer-Centric Mindset | UX/UI Collaboration</p>
-    <p>Execution & Delivery: Agile Product Delivery | Data-Driven Decision Making | Stakeholder Management </p>
-    <p>Leadership & Influence: Cross-Functional Leadership | Change Management | People Development & Mentorship</p>
-    <p>Technology & Innovation: Technical Fluency | Innovation & Experimentation</p>
-
-    <h5>Project & Delivery</h5>
-    <p>Planning & Execution Excellence: Project Planning & Scheduling | Scope Management | Resource Management | Risk
-      Management | Time & Cost Control</p>
-    <p>Governance & Quality: Program Governance | Quality Assurance & Compliance | Procurement & Vendor Management </p>
-    <p>Leadership & Communication: Executive Reporting & Communication | Conflict Resolution & Negotiation | Team
-      Leadership & Motivation</p>
-    <p>Methodology & Tools: Waterfall & Hybrid Delivery Expertise | Project Portfolio Management (PPM) | Jira, Asana,
-      Smartsheet, SharePoint, Confluence</p>
-
-    <h5>People</h5>
-    <p>Leadership & Emotional Intelligence: Emotional Intelligence (EQ) | Empathetic Leadership | Conflict Coaching |
-      Active Listening & Feedback | Influence Without Authority</p>
-    <p>Team Development & Growth: Talent Development & Succession Planning | Performance Management | Learning &
-      Development Advocacy | Recognition & Motivation | Diversity, Equity & Inclusion (DEI) Leadership</p>
-    <p>Culture & Organizational Dynamics: Culture Building & Change Stewardship | Psychological Safety & Trust Building
-      | Employee Engagement Analytics | Remote & Hybrid Team Management | Coaching for Leadership Presence</p>
-
+    <p>Product Strategy | Agile Delivery | AI & Data Platforms | Stakeholder Leadership | Program Governance</p>
   </section>
 
-  <!-- SECTION FOR CASE STUDY -->
-  <section id="case-studies" style="background-color:#f9f9f9;">
-    <h2 class="section-title">Case Studies / Featured Work</h2>
+  <!-- CASE STUDIES -->
+  <section id="case-studies" style="background:#fffdf4;">
+    <h2 class="section-title">Case Studies</h2>
 
-
-
-
-
-    <!-- CARD 1 -->
     <div class="card">
       <h5 class="card-title">AI-Powered Personalization Engine</h5>
-      <p class="card-text">Developed a recommendation system using ML algorithms to personalize user experience across
-        SaaS platforms.</p>
-      <button type="button" class="btn btn-yellow view-pdf-btn" data-pdf="assets/sample1.pdf" data-bs-toggle="modal"
-        data-bs-target="#pdfModal">
+      <p>ML-driven recommendation platform.</p>
+      <button class="btn btn-yellow view-pdf-btn" data-pdf="assets/sample1.pdf" data-bs-toggle="modal" data-bs-target="#pdfModal">
         View PDF
       </button>
     </div>
-
-    <!-- CARD 2 -->
-    <div class="card">
-      <h5 class="card-title">Intelligent Reporting Tool</h5>
-      <p class="card-text">Designed and launched a reporting dashboard with predictive analytics for enterprise clients.
-      </p>
-      <button type="button" class="btn btn-yellow view-pdf-btn" data-pdf="assets/sample2.pdf" data-bs-toggle="modal"
-        data-bs-target="#pdfModal">
-        View PDF
-      </button>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="card">
-      <h5 class="card-title">Automated Customer Engagement Platform</h5>
-      <p class="card-text">Built an NLP-driven chatbot and automation suite to enhance customer interaction and reduce
-        support costs.</p>
-      <button type="button" class="btn btn-yellow view-pdf-btn" data-pdf="assets/sample3.pdf" data-bs-toggle="modal"
-        data-bs-target="#pdfModal">
-        View PDF
-      </button>
-    </div>
-
-    <!-- SHARED MODAL for all 3 cards -->
-    <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <p class="modal-title" id="pdfModalLabel">Secure PDF Viewer</p>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body bodyofpdf">
-            <div id="viewerContainer">
-              <div class="watermark">CONFIDENTIAL</div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <!-- CARD 4 -->
-    <div class="card">
-      <h5 class="card-title">Name of article</h5>
-      <p class="card-text">Description of article.</p>
-      <button onclick="location.href='http://www.example.com'" type="button" class="btn btn-yellow">
-        Article
-      </button>
-    </div>
-
-
-
   </section>
 
-
-
-  <!-- CONTACT ME-->
-  <section id="contact-me" style="background-color:#f0f0f0;">
+  <!-- CONTACT -->
+  <section id="contact-me" style="background:#fff8e1;">
     <h2 class="section-title">Contact Me</h2>
-    <p>I welcome your communication via any of the following means.</p>
-    <a href="mailto:abhimanyu.data@gmail.com" class="btn btn-yellow" role="button"><i class="fa fa-envelope-square"></i>
-      Email Me</a>
-    <a href="https://www.linkedin.com" class="btn btn-yellow" role="button"><i class="fa fa-linkedin"></i> Linkedin</a>
-    <a href="https://abhimanyu-data.github.io/abhimanyu-portfolio/" class="btn btn-yellow" role="button"><i
-        class="fa fa-globe"></i> Web Page</a>
+    <a href="mailto:abhimanyu.data@gmail.com" class="btn btn-yellow"><i class="fa fa-envelope"></i> Email</a>
+    <a href="https://www.linkedin.com" class="btn btn-yellow"><i class="fa fa-linkedin"></i> LinkedIn</a>
   </section>
 
   <!-- FOOTER -->
-  <footer class="hero4footer" style="max-width: none; margin: 0; padding: 0; border-radius: 0;">
+  <footer class="hero4footer">
     <p>&copy; 2025 Abhimanyu Singh. All rights reserved.</p>
   </footer>
+
+  <!-- PDF MODAL -->
+  <div class="modal fade" id="pdfModal">
+    <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body bodyofpdf">
+          <div id="viewerContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
+</html>
 
 
 <!--
